@@ -14,6 +14,7 @@
   "author": "Ömer Can Hocaoğlu",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.19.1"
   },
   "devDependencies": {
