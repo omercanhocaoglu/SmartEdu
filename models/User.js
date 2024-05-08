@@ -20,10 +20,15 @@ const UserSchema = new Schema({
     type: String,
     enum: ["student", "teacher", "admin"],
     default: "student"
-  }
+  },
+  courses: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Course'
+  }]
 });
 UserSchema.pre('save', function (next) {
   const user = this;
+  if (!user.isModified('password')) return next();
   bcrypt.hash(user.password, 10, (error, hash) => {
     user.password = hash;
     next();
