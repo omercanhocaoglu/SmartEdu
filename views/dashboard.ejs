@@ -242,7 +242,6 @@
 								<div class="blog-author">
 									<div class="author-bio">
 										<h3 class="author_name"><a href="#"> Courses Enrolled by:  <%= user.name %></a></h3>
-
 									</div>
 								</div>
 							</div><!-- end col -->
@@ -264,14 +263,17 @@
 									<th scope="row"><%=users[i]._id %></th>
 									<td><%=users[i].email %></td>
 									<td><%=users[i].role %></td>
-									<td><a href="/users/<%= users[i]._id %>?_method=DELETE" 
-										onclick="return confirm('ARE YOU SURE')"
-										class="btn btn-danger rounded-0 text-white"><span>DELETE</span></a></td>
+									<td>
+										<a href="/users/<%= users[i]._id %>?_method=DELETE" 
+											onclick="return confirm('ARE YOU SURE')"
+											class="btn btn-danger rounded-0 text-white">
+												<span>DELETE</span>
+										</a>
+									</td>
 								  </tr>
 							<% } %>
 								</tbody>
 							  </table>
-
 						</div><!-- end row -->
 						<div class="row mt-5">
 							<h2>Categories</h2>
