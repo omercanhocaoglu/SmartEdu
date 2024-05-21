@@ -37,7 +37,7 @@ app.use(methodOverride('_method', {
   methods: ['POST', 'GET']
 }));
 // Connect DB
-mongoose.connect('mongodb://localhost/smartedu-db', {
+mongoose.connect('mongodb+srv://omercanhocaoglu:cMvuZUYvdEqUnza1@smartedudbcluster.pvntovo.mongodb.net/?retryWrites=true&w=majority&appName=SmartEduDBCluster', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -51,7 +51,7 @@ app.use("/courses", courseRoute);
 app.use('/categories', categoryRoute);
 app.use('/users', userRoute);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`app started on port: ${port}`);
 });
